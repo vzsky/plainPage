@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "@types/node": "^13.9.5",
+    "@types/react": "^16.9.27",
+    "typescript": "^3.8.3"
+  },
+  "name": "layki.net",
+  "version": "1.0.0",
+  "description": "my99n's personal site",
+  "main": "index.js",
+  "author": "my99n",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next"
+  },
+  "dependencies": {
+    "grommet": "^2.11.3",
+    "grommet-icons": "^4.4.0",
+    "next": "^9.3.2",
+    "polished": "^3.5.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.0.1"
+  }
+}
