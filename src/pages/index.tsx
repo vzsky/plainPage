@@ -1,11 +1,11 @@
 import React from 'react'
-import { Box, Grid, Heading, Text, Header, Button, Nav, Anchor } from 'grommet';
+import { Box, Heading, Text, Nav, ResponsiveContext, Anchor } from 'grommet';
 import { Instagram, Github, Mail, LinkedinOption, FacebookOption, Send } from 'grommet-icons'
 
 const Frame = (props:any) => (
     <Box
         direction="row"
-        background = 'background'
+        background = '#F0544F'
         style={{width:'100%', height:'100%'}}
         {...props}
     />
@@ -17,54 +17,40 @@ const Holder = (props:any) => (
         justify='center' 
         pad='medium'
         wrap = {true}
-        overflow = "hidden"
+        overflow = 'hidden'
+        background='background'
         {...props}
     />
 );
 
+const social = [
+    { href:"https://www.facebook.com/tenninox", icon: <FacebookOption /> },
+    { href:"https://www.instagram.com/my99.n/", icon:<Instagram />},
+    { href:"https://github.com/vzsky", icon:<Github />},
+    { href:"mailto:talay@layki.net", icon:<Mail />},
+    { href:"https://www.linkedin.com/in/touchs/", icon:<LinkedinOption />},
+    { href:"https://t.me/my99n", icon:<Send />},
+]
+
 export default () => {
-    
+    const size = React.useContext(ResponsiveContext);
     return (
-        < >
-            <Frame>
-                <Grid
-                fill
-                columns={["xxsmall", ['xxsmall','flex'], ['medium', 'large'], ['xxsmall', 'xsmall']]}
-                rows={['xxsmall', 'flex', 'medium', 'flex']}
-                areas={[
-                    { name: 'header', start: [0, 0], end: [3, 0] },
-                    { name: 'mid1', start: [2, 2], end: [2, 2] },
-                    { name: 'side', start: [0, 1], end: [0, 3] }
-                ]}
-                >
-                    <Box gridArea='header' background='dark-1'>
-                    <Header overflow='hidden' pad={{left:'medium', right:'medium'}}>
-                        <Button label="Home." plain/>
-                        <Nav direction="row">
-                            <Anchor href="https://www.facebook.com/tenninox" icon={<FacebookOption />} />
-                            <Anchor href="https://www.instagram.com/my99.n/" icon={<Instagram />} />
-                            <Anchor href="https://github.com/vzsky" icon={<Github />} />
-                            <Anchor href="mailto:talay@layki.net" icon={<Mail />} />
-                            <Anchor href="https://www.linkedin.com/in/touchs/" icon={<LinkedinOption />} />
-                            <Anchor href="https://t.me/my99n" icon={<Send />} />
-                        </Nav>
-                    </Header>
-                    </Box>
-                    <Holder gridArea="mid1" >
-                        <Heading color='#EEE' size='medium' margin='xsmall' textAlign='end'>
-                            Touch Sungkawichai
-                        </Heading>
-                        <Text color='#EEE' size='medium' margin='xsmall'>
-                            KVIS 4 | Coder | Photograph | Thinker
-                        </Text>
-                    </Holder>
-                    <Box gap='large' gridArea='side' background='light-1' overflow='hidden' justify='center'>
-                        <Text style={{transform: "rotate(-90deg)"}}>
-                            layki.net
-                        </Text>
-                    </Box>
-                </Grid>
-            </Frame>      
-        </ >    
+        <Frame>
+            <Holder >
+                <Heading color='#EEE' responsive={true} size='medium' margin='medium' textAlign='end'>
+                    Touch Sungkawichai
+                </Heading>
+                <Text color='#EEE' size={size} margin='small'>
+                    KVIS 4 | Coder | Photograph | Thinker 
+                </Text>
+            </Holder>
+            <Box background='light-1' overflow='hidden' alignContent='center' justify='around'>
+                <Nav align='center'>
+                    {social.map(item => (
+                        <Anchor color='dark-1' href={item.href} icon={item.icon} />
+                    ))}
+                </Nav>
+            </Box>
+        </Frame>        
       );
 }

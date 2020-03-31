@@ -11,7 +11,8 @@
   "author": "my99n",
   "license": "MIT",
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "compile": "next build && next export -o html"
   },
   "dependencies": {
     "grommet": "^2.11.3",

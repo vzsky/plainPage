@@ -7,7 +7,7 @@ const theme = {
     defaultMode: "light",
     global: {
         colors: {
-            brand: "#FA198B",
+            brand: "#F0544F",
             background : "#5BC0BE",
             'accent-1' : "#F22B29",
             "light-1" : "#FFC15E",
