@@ -41,7 +41,7 @@ export default () => {
                     Touch Sungkawichai
                 </Heading>
                 <Text color='#EEE' size={size} margin='small'>
-                    KVIS 4 | Coder | Photograph | Thinker 
+                    KVIS 4 | Coder | Photographer | Thinker 
                 </Text>
             </Holder>
             <Box background='light-1' overflow='hidden' alignContent='center' justify='around'>
